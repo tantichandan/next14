@@ -1,18 +1,16 @@
 "use client";
 
 import { useContext, useEffect, useState } from "react";
-
-
+import Link from "next/link";
 
 import Button from "../button";
 import ThemeToggler from "../theme";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
-
-import { menuItems } from "@/app/utils";
-import { MenuItem } from "@/app/utils/types";
 import { GlobalContext } from "@/app/context";
-import Link from "next/link";
+import { MenuItem } from "@/app/utils/types";
+import { menuItems } from "@/app/utils";
+
 
 export default function Header() {
   const [sticky, setSticky] = useState<boolean>(false);
@@ -52,18 +50,28 @@ export default function Header() {
         `}
       >
         <div className="container">
-          <div className="relative -mx-4 flex items-center justify-between">
+          <div className="relative -mx-2 flex items-center justify-between">
+
+          <div className="gap-1 items-center lg:flex">
+                  <ThemeToggler />
+                </div>
             <div className="w-60 max-w-full px-4 xl:mr-12">
               <Link
                 href={"/"}
-                className={`text-[30px] font-extrabold cursor-pointer block w-full
+                className={`text-[20px] font-bold cursor-pointer block w-full
                     ${sticky ? "py-5 lg:py-2" : "py-8"}
                     `}
               >
-                গদজজড
+                NextBlog
               </Link>
+
+              
             </div>
-            <div className="flex w-full items-center justify-between px-4">
+            <div className="flex w-full items-center justify-evenly">
+
+              <div className="flex w-full md:justify-evenly md:gap-2">
+
+
               <div>
                 <button
                   onClick={handleNavbarToggle}
@@ -89,7 +97,7 @@ export default function Header() {
                 </button>
                 <nav
                   id="navbarCollapse"
-                  className={`absolute right-0 z-30 w-[250px] rounded border-[.5px] bg-white border-body-color/50 py-4 
+                  className={`absolute right-0 z-30 w-[250px] rounded border-[.5px]  bg-white border-body-color/50 py-4 
                 px-6 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100
 
                 ${
@@ -113,11 +121,12 @@ export default function Header() {
                   </ul>
                 </nav>
               </div>
-              <div className="flex gap-4 items-center justify-end pr-16 lg:pr-0">
+              <div className="flex gap-2 items-center justify-end lg:pr-0">
                 {session !== null ? (
                   <Button
                     onClick={() => router.push("/create")}
                     text="Create"
+                    
                   />
                 ) : null}
                 <Button
@@ -126,10 +135,22 @@ export default function Header() {
                   }
                   text={session !== null ? "Logout" : "Login"}
                 />
-                <div className="flex gap-3 items-center">
-                  <ThemeToggler />
-                </div>
+                
               </div>
+
+
+
+
+                
+
+
+
+
+
+              </div>
+              
+
+
             </div>
           </div>
         </div>

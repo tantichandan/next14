@@ -13,7 +13,7 @@ export default function ThemeToggler() {
     >
 
         {
-            theme ==='dark' ? <BsFillSunFill size={30}/> : <MdDarkMode size={30}/>
+            theme ==='dark' ? <BsFillSunFill size={20}/> : <MdDarkMode size={20}/>
         }
 
         
