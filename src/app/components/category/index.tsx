@@ -83,7 +83,8 @@ export default function CategoryList({ list }: { list: Blog[] }) {
                 </h3>
                 <ul className="p-8">
                   {relatedBlogs && relatedBlogs.length ? (
-                    relatedBlogs.map((item) => (
+                    relatedBlogs.map((item) => ( 
+
                       <li
                         className="mb-6 border-b border-body-color border-opacity-10 pb-6 dark:border-white dark:border-opacity-10"
                         key={item.id}
@@ -106,6 +107,7 @@ export default function CategoryList({ list }: { list: Blog[] }) {
                           </div>
                         </div>
                       </li>
+                      
                     ))
                   ) : (
                     <h1>No Related blogs available</h1>
