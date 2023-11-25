@@ -69,6 +69,8 @@ export default function CategoryList({ list }: { list: Blog[] }) {
                 <div className="flex flex-wrap py-6 px-8">
                   {categories.map((catItem) => (
                     <button
+                    
+
                       onClick={() => router.push(`/category/${catItem.value}`)}
                       className="mr-3 mb-3 inline-flex items-center justify-center rounded-md bg-primary py-2 px-4 text-white duration-300"
                     >
