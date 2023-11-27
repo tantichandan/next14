@@ -5,6 +5,7 @@ import NextAuthProvider from './providers/next-auth-provider'
 import NextThemeProvider from './providers/theme-provider'
 import GlobalState from './context'
 import Header from './components/header'
+export const dynamic = 'force-dynamic'
 
 const inter = Inter({ subsets: ['latin'] })
 
